@@ -1,36 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-main().catch(err => console.log(err));
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/ContactDance');
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
-}
-const bodyparser = require("body-parser");
-const path = require('path');
-const app = express();
-const port = 80;
-
-// Database Related Stuff
-var contactSchema = new mongoose.Schema({
-    Name: String,
-    Number: String,
-    Email: String,
-    Address: String,
-    Age: String,
-    Consern: String
-  });
-
-  const Contact = mongoose.model('Contact', contactSchema);
-
-  app.post("/Contact-Us", (req, res)=>{
-    var myData = new Contact(req.body);
-    console.log(myData)
-    myData.save().then(()=>{
-    res.send("This item has been saved to the database")
-    }).catch(()=>{
-    res.status(400).send("item was not saved to the databse")
-})})
-
 // EXPRESS SPECIFIC STUFF
 // app.use(favicon(path.join(__dirname, 'static', 'LOGO.ico')))
 app.use('/static', express.static('static')) // For serving static files
