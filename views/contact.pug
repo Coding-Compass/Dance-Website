@@ -1,0 +1,36 @@
+html
+  head 
+    title  Super Dancoing Academy | SDA |superdanceacademy.in 
+    style 
+        include ../static/style.css
+    body
+       nav#nabbar 
+        ul  
+         li #[a(href = "/") Home]
+         li#brand #[a(href = "/") SuperDanceAcademy.in] 
+         li #[a(href = "/Services") Services]
+         li #[a(href = "/Classes") Classes]
+         li #[a(href = "/Contact-Us") Contact-Us]
+         li #[a(href = "/sponser") Our Sponsers]
+         li #[a(href = "/About-us") About-Us]
+
+    .home
+        form(action="/Contact-Us", method="post")
+            .form-group
+                h1 Contact Form
+                input#Name(type="text", name="Name", placeholder="Enter Your Name")
+                input#Number(type="number", name="Number", placeholder="Enter Your Number")
+                input#Email(type="email", name="Email", placeholder="Enter Your Email")
+                input#Age(type="text", name="Address", placeholder="What is Your Address?")
+                input#Age(type="number", name="Age", placeholder="What is Your Age?")
+                input#Concern(type="text", name="Concern", placeholder="What is Your Concern?")
+                button.btn(type="submit") Submit
+
+    
+        
+    footer 
+        | All right reserved.© 
+        span.span #[a(href = "/") SuperDanceAcademy.in] 
+
+    script
+        include ../static/script.js
