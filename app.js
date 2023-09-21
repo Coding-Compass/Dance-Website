@@ -1,6 +1,4 @@
 const express = require('express');
-// EXPRESS SPECIFIC STUFF
-// app.use(favicon(path.join(__dirname, 'static', 'LOGO.ico')))
 app.use('/static', express.static('static')) // For serving static files
 app.use(express.urlencoded());
 
